@@ -1,0 +1,134 @@
+.root {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+  height: var(--header-height);
+  background-color: var(--color-bg);
+  border-bottom: 1px solid var(--color-border-subtle);
+}
+
+.inner {
+  height: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) {
+  .inner {
+    padding-inline: var(--space-6);
+  }
+}
+
+.brand {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text);
+  text-decoration: none;
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.brand:hover {
+  color: var(--color-text);
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.extra {
+  display: inline-flex;
+  align-items: center;
+}
+
+.mobileExtra {
+  margin-top: var(--space-5);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.link {
+  position: relative;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 0;
+  padding: var(--space-2) 0;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+.link:hover {
+  color: var(--color-text);
+}
+
+.link:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+.linkActive {
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-4) 0;
+}
+
+.mobileLink {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 0;
+  text-align: left;
+  padding: var(--space-3) 0;
+  cursor: pointer;
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: color var(--duration-fast) var(--easing-standard);
+}
+
+.mobileLink:hover {
+  color: var(--color-text);
+}
+
+.mobileLinkActive {
+  color: var(--color-text);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hamburgerIcon {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-1);
+}
+
+.hamburgerLine {
+  display: block;
+  width: var(--space-4);
+  height: 2px;
+  background-color: currentColor;
+}

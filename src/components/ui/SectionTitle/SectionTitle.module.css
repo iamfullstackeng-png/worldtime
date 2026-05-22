@@ -1,0 +1,54 @@
+.root {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  margin: 0;
+}
+
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+}
+
+.alignRight {
+  text-align: right;
+}
+
+.text {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.sizeMd .text {
+  font-size: var(--font-size-2xl);
+}
+
+.sizeLg .text {
+  font-size: var(--font-size-3xl);
+}
+
+.rule {
+  flex: 1 1 auto;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+/* Matches BREAKPOINTS.md from @/styles/breakpoints.js */
+@media (max-width: 767px) {
+  .sizeLg .text {
+    font-size: var(--font-size-2xl);
+  }
+
+  .sizeMd .text {
+    font-size: var(--font-size-xl);
+  }
+}

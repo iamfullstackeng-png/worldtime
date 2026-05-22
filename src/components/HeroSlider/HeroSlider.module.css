@@ -1,0 +1,90 @@
+.root {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.primaryColumn,
+.accentColumn {
+  /* Required so grid items don't blow out the track when their content
+     (an <img>) wants to be wider than the track allows. */
+  min-width: 0;
+}
+
+.carousel {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--color-surface-alt);
+  position: relative;
+  padding-bottom: var(--space-6);
+}
+
+/* --- Bootstrap Carousel overrides --- */
+
+/* Replace the default white SVG control icons with token-colored chevrons.
+   Bootstrap renders the prev/next as background-image on a white SVG; we
+   override with inline-SVG data URIs whose stroke uses --color-text. */
+.carousel :global(.carousel-control-prev-icon),
+.carousel :global(.carousel-control-next-icon) {
+  width: var(--space-5);
+  height: var(--space-5);
+  background-image: none;
+  background-color: var(--color-text);
+  mask-image: var(--chevron-mask);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 60%;
+  -webkit-mask-image: var(--chevron-mask);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: 60%;
+}
+
+.carousel :global(.carousel-control-prev-icon) {
+  --chevron-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5L4.25 4l2.5-2.5L5.25 0z' fill='black'/%3E%3C/svg%3E");
+}
+
+.carousel :global(.carousel-control-next-icon) {
+  --chevron-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5L3.75 4l-2.5 2.5L2.75 8l4-4-4-4z' fill='black'/%3E%3C/svg%3E");
+}
+
+.carousel :global(.carousel-control-prev),
+.carousel :global(.carousel-control-next) {
+  opacity: 1;
+  width: var(--space-7);
+}
+
+.carousel :global(.carousel-indicators) {
+  margin: 0;
+  bottom: var(--space-2);
+  gap: var(--space-2);
+}
+
+.carousel :global(.carousel-indicators button) {
+  width: var(--space-2);
+  height: var(--space-2);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-text-muted);
+  border: 0;
+  opacity: 1;
+  text-indent: -999em;
+  transition: background-color var(--duration-fast) var(--easing-standard);
+}
+
+.carousel :global(.carousel-indicators .active) {
+  background-color: var(--color-text);
+}
+
+/* Matches BREAKPOINTS.md from @/styles/breakpoints.js
+   (CSS custom properties don't work inside @media — manual sync). */
+@media (max-width: 767px) {
+  .root {
+    grid-template-columns: 1fr;
+  }
+
+  .accentColumn {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+.root {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  background-color: var(--color-surface-alt);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderSvg {
+  /* 64px literal: design system has no icon-size scale yet; promoting this to
+     --icon-size-lg would be over-engineering for a single use. Revisit when a
+     second consumer needs an icon-size token. */
+  width: 64px;
+  height: 64px;
+}

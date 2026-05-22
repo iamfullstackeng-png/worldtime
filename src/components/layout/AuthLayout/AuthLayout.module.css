@@ -1,0 +1,46 @@
+.root {
+  min-height: 100vh;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  background-color: var(--color-bg);
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.twoColumn {
+  /* Form ~40% / illustration ~60% per the Figma desktop frame. */
+  grid-template-columns: 2fr 3fr;
+}
+
+.formColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) var(--space-5);
+}
+
+.formInner {
+  width: 100%;
+  max-width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.illustrationColumn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7);
+  /* Transparent background — the illustration's own shapes provide the surface. */
+}
+
+@media (min-width: 768px) {
+  .formColumn {
+    padding: var(--space-7);
+  }
+
+  .illustrationColumn {
+    display: flex;
+  }
+}

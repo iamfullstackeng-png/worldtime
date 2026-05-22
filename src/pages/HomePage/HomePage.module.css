@@ -1,0 +1,86 @@
+.page {
+  display: flex;
+  flex-direction: column;
+}
+
+.welcome {
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-6);
+}
+
+.countriesSection {
+  margin-top: var(--space-7);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-7);
+  margin-bottom: var(--space-5);
+}
+
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--color-danger);
+}
+
+.emptyState {
+  padding: var(--space-6);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.signOutButton {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.signOutButton:hover {
+  color: var(--color-text);
+}
+
+.signOutButton:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* Matches BREAKPOINTS.md from @/styles/breakpoints.js
+   (CSS custom properties don't work inside @media — manual sync). */
+@media (max-width: 767px) {
+  .welcome {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-4);
+  }
+
+  .countriesSection {
+    margin-top: var(--space-5);
+  }
+
+  .loadMoreWrap {
+    margin-top: var(--space-5);
+    margin-bottom: var(--space-4);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

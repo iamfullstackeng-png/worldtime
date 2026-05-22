@@ -1,0 +1,102 @@
+:root {
+  /* Body and surfaces */
+  --bs-body-bg: var(--color-bg);
+  --bs-body-color: var(--color-text);
+  --bs-secondary-color: var(--color-text-muted);
+  --bs-tertiary-bg: var(--color-surface-alt);
+
+  /* Typography */
+  --bs-font-sans-serif: var(--font-sans);
+  --bs-body-font-family: var(--font-sans);
+  --bs-body-font-size: var(--font-size-md);
+  --bs-body-font-weight: var(--font-weight-regular);
+  --bs-body-line-height: var(--line-height-base);
+
+  /* Borders and radii */
+  --bs-border-color: var(--color-border-subtle);
+  --bs-border-color-translucent: var(--color-border-subtle);
+  --bs-border-radius: var(--radius-md);
+  --bs-border-radius-sm: var(--radius-sm);
+  --bs-border-radius-lg: var(--radius-lg);
+  --bs-border-radius-pill: var(--radius-pill);
+
+  /* Brand */
+  --bs-primary: var(--color-primary);
+  --bs-primary-rgb: 26, 26, 26;
+  --bs-danger: var(--color-danger);
+  --bs-danger-rgb: 192, 57, 43;
+
+  /* Links */
+  --bs-link-color: var(--color-link);
+  --bs-link-color-rgb: 47, 111, 237;
+  --bs-link-hover-color: var(--color-link-hover);
+  --bs-link-hover-color-rgb: 30, 79, 184;
+}
+
+/* Buttons */
+.btn {
+  --bs-btn-font-family: var(--font-sans);
+  --bs-btn-font-weight: var(--font-weight-medium);
+  --bs-btn-border-radius: var(--radius-md);
+  --bs-btn-padding-x: var(--space-4);
+  --bs-btn-padding-y: var(--space-2);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--color-primary);
+  --bs-btn-border-color: var(--color-primary);
+  --bs-btn-color: var(--color-primary-contrast);
+  --bs-btn-hover-bg: var(--color-primary-hover);
+  --bs-btn-hover-border-color: var(--color-primary-hover);
+  --bs-btn-hover-color: var(--color-primary-contrast);
+  --bs-btn-active-bg: var(--color-primary-hover);
+  --bs-btn-active-border-color: var(--color-primary-hover);
+  --bs-btn-active-color: var(--color-primary-contrast);
+}
+
+/* Forms */
+.form-control,
+.form-select {
+  --bs-border-color: var(--color-border-subtle);
+  --bs-border-radius: var(--radius-md);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-md);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--color-link);
+  box-shadow: var(--shadow-focus);
+}
+
+.form-label {
+  font-family: var(--font-sans);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+/* Offcanvas (used by Header mobile nav) */
+.offcanvas,
+.offcanvas-lg,
+.offcanvas-md,
+.offcanvas-sm,
+.offcanvas-xl,
+.offcanvas-xxl {
+  --bs-offcanvas-bg: var(--color-bg);
+  --bs-offcanvas-color: var(--color-text);
+  --bs-offcanvas-border-color: var(--color-border-subtle);
+  --bs-offcanvas-padding-x: var(--space-5);
+  --bs-offcanvas-padding-y: var(--space-5);
+  --bs-offcanvas-zindex: var(--z-modal);
+  --bs-offcanvas-box-shadow: var(--shadow-md);
+}
+
+/* Alerts */
+.alert-danger {
+  --bs-alert-color: var(--color-danger);
+  --bs-alert-bg: var(--color-danger-bg);
+  --bs-alert-border-color: var(--color-danger);
+}
