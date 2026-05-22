@@ -2,9 +2,6 @@ import { createSelector } from '@reduxjs/toolkit';
 
 import { REGIONS } from './countriesConstants.js';
 
-// Style choice: leaf selectors are plain arrows; only derived selectors are
-// wrapped in createSelector. Identity reads don't need memoization, and
-// createSelector accepts plain functions as inputs just fine.
 const selectCountriesState = (state) => state.countries;
 
 export const selectAllCountries = (state) => selectCountriesState(state).list;

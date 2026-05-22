@@ -23,8 +23,6 @@ export default function LoginPage() {
     validate: loginValidationSchema,
   });
 
-  // Already-authenticated guard: a logged-in user hitting /login (bookmark,
-  // back button) is bounced to wherever they were heading or home.
   useEffect(() => {
     if (isAuthenticated) {
       const destination = location.state?.from?.pathname ?? PATHS.HOME;
@@ -43,8 +41,7 @@ export default function LoginPage() {
       <div className={styles.formColumn}>
         <h1 className={styles.title}>Sign In</h1>
         <p className={styles.subtitle}>
-          New user? {/* Placeholder per spec — the brief does not include a registration flow. */}
-          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+          New user? 
           <a href="#" className={styles.createAccountLink}>
             Create an account
           </a>

@@ -9,8 +9,6 @@ import Root from './Root.jsx';
 
 import '@/styles/index.css';
 
-// Force the auth-listener module's side-effect registrations to run; bundlers
-// would otherwise be free to tree-shake a side-effect-only import.
 registerAuthListeners();
 
 createRoot(document.getElementById('root')).render(

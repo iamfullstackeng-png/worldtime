@@ -1,11 +1,5 @@
-// Versioned key so a future breaking change to the persisted shape can bump to
-// `_v2` and orphan the old data without writing a migration.
+// Versioned key: bumping to `_v2` orphans old data without needing a migration.
 export const STORAGE_KEY = 'tw_auth_v1';
-
-// Every sessionStorage access is wrapped in try/catch. Browsers throw under
-// quota exhaustion, in Safari private mode (historically), and the global is
-// undefined under Node / SSR / tests without jsdom. These helpers never throw —
-// the slice treats absence and corruption identically: start logged out.
 
 function getStorage() {
   try {

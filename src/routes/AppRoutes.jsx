@@ -5,11 +5,6 @@ import { HomePage, LoginPage, NotFoundPage } from '@/pages';
 import { PATHS } from './paths.js';
 import ProtectedRoute from './ProtectedRoute.jsx';
 
-/**
- * Route table. <Routes> matches the first route that fits; the catch-all
- * `*` (PATHS.NOT_FOUND) MUST stay last — appending any route after it
- * makes it unreachable.
- */
 export default function AppRoutes() {
   return (
     <Routes>
