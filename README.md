@@ -14,7 +14,7 @@ A small React app that lists countries from the REST Countries API behind a logi
 
 Password rules: min 8 chars, 1 uppercase, 1 number, 1 symbol.
 
-Architecture, layering, and notable decisions are documented in [System design](#system-design) below.
+Architecture, layering, and notable decisions are documented in [System design](#system-design) below. A live design-system gallery (tokens, primitives, composite components) is available at [worldtime-ten.vercel.app/system-design](https://worldtime-ten.vercel.app/system-design).
 
 ---
 
