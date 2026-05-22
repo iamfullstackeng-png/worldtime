@@ -25,6 +25,4 @@ startAppListening({
  * bundlers may tree-shake side-effect-only modules; calling this function from
  * app startup forces the import (and therefore the registration) to stick.
  */
-export const registerAuthListeners = () => {
-  // intentionally empty — the side effects above do the registration
-};
+export const registerAuthListeners = () => {};

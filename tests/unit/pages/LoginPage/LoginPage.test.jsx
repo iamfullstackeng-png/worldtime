@@ -11,8 +11,6 @@ import {
   uninstallSessionStorage,
 } from '../../../helpers/sessionStorageMock.js';
 
-// Mock the persistence module so the slice doesn't try to hit real
-// sessionStorage at module-eval time.
 vi.mock('@/features/auth/authStorage.js', () => ({
   STORAGE_KEY: 'tw_auth_v1',
   readSession: () => null,
@@ -20,7 +18,6 @@ vi.mock('@/features/auth/authStorage.js', () => ({
   clearSession: () => {},
 }));
 
-// Spy on react-router-dom's useNavigate.
 const navigateSpy = vi.fn();
 vi.mock('react-router-dom', async (importOriginal) => {
   const actual = await importOriginal();

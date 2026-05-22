@@ -1,7 +1,4 @@
-// In-memory sessionStorage shim. Mirrors the Storage interface closely enough
-// for the auth slice and its storage adapter. Use installSessionStorage() in
-// a test's beforeEach and uninstallSessionStorage() in afterEach.
-
+// In-memory sessionStorage shim for tests that mount the auth slice.
 export function createSessionStorage() {
   const store = new Map();
   return {

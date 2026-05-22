@@ -1,10 +1,7 @@
 import { MESSAGES } from './messages.js';
 
-// Pragmatic client-side regex, not RFC 5322. A maximally-permissive regex catches
-// edge cases real users send (plus-aliases, subdomains, etc.) but client-side
-// email validation can only ever be a UX hint — the only correct way to confirm
-// an address is to send a verification message. This pattern strikes the balance:
-// reject obvious typos, accept anything that *could* be an email.
+// Pragmatic client-side regex (not RFC 5322): rejects obvious typos and
+// accepts anything that could be an email. Real verification needs a round-trip.
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 /**

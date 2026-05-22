@@ -74,13 +74,11 @@ describe('HomePage', () => {
 
   it('renders the hero slider', () => {
     renderHome();
-    // HeroAccentFrame is the easiest stable handle for the slider's presence.
     expect(screen.getByLabelText(/featured content/i)).toBeInTheDocument();
   });
 
   it('renders skeletons while loading, then real cards after fetch resolves', async () => {
     const { container } = renderHome();
-    // Skeletons should be present synchronously after first render.
     expect(container.querySelector('[aria-busy="true"]')).not.toBeNull();
 
     await waitFor(() => {

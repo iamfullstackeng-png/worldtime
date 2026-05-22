@@ -21,8 +21,6 @@
   padding-bottom: var(--space-6);
 }
 
-/* --- Bootstrap Carousel overrides --- */
-
 /* Replace the default white SVG control icons with token-colored chevrons.
    Bootstrap renders the prev/next as background-image on a white SVG; we
    override with inline-SVG data URIs whose stroke uses --color-text. */

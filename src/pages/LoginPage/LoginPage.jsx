@@ -41,7 +41,8 @@ export default function LoginPage() {
       <div className={styles.formColumn}>
         <h1 className={styles.title}>Sign In</h1>
         <p className={styles.subtitle}>
-          New user? 
+          New user? {/* No registration flow in scope; the link is visual fidelity. */}
+          {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
           <a href="#" className={styles.createAccountLink}>
             Create an account
           </a>

@@ -5,9 +5,8 @@ import styles from './CountryCard.module.css';
 
 const cx = (...args) => args.filter(Boolean).join(' ');
 
+// Hide a failed-to-load flag so the thumbnail's surface color shows through.
 const hideOnError = (event) => {
-  // Cheap fallback when the flag URL 404s or fails to load: hide the broken
-  // image and let the thumbnail's --color-surface-alt background show through.
   event.currentTarget.style.display = 'none';
 };
 

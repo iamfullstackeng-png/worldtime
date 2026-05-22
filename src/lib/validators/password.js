@@ -1,9 +1,7 @@
 import { MESSAGES } from './messages.js';
 
-// Explicit symbol allowlist. We avoid \W because \W's complement is \w =
-// [A-Za-z0-9_], which (a) makes "_" a non-symbol, and (b) under the `u` flag
-// includes Unicode letters in ways that produce surprising matches. Spelling
-// the class out is boring and correct.
+// Explicit allowlist instead of \W: underscore counts as a symbol, and \W
+// pulls in Unicode letters under the `u` flag.
 const SYMBOL_REGEX = /[!@#$%^&*(),.?":{}|<>_\-+=/\\[\];'`~]/;
 const UPPER_REGEX = /[A-Z]/;
 const NUMBER_REGEX = /[0-9]/;

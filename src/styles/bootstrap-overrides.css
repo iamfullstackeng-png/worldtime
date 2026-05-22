@@ -1,18 +1,15 @@
 :root {
-  /* Body and surfaces */
   --bs-body-bg: var(--color-bg);
   --bs-body-color: var(--color-text);
   --bs-secondary-color: var(--color-text-muted);
   --bs-tertiary-bg: var(--color-surface-alt);
 
-  /* Typography */
   --bs-font-sans-serif: var(--font-sans);
   --bs-body-font-family: var(--font-sans);
   --bs-body-font-size: var(--font-size-md);
   --bs-body-font-weight: var(--font-weight-regular);
   --bs-body-line-height: var(--line-height-base);
 
-  /* Borders and radii */
   --bs-border-color: var(--color-border-subtle);
   --bs-border-color-translucent: var(--color-border-subtle);
   --bs-border-radius: var(--radius-md);
@@ -20,20 +17,17 @@
   --bs-border-radius-lg: var(--radius-lg);
   --bs-border-radius-pill: var(--radius-pill);
 
-  /* Brand */
   --bs-primary: var(--color-primary);
   --bs-primary-rgb: 26, 26, 26;
   --bs-danger: var(--color-danger);
   --bs-danger-rgb: 192, 57, 43;
 
-  /* Links */
   --bs-link-color: var(--color-link);
   --bs-link-color-rgb: 47, 111, 237;
   --bs-link-hover-color: var(--color-link-hover);
   --bs-link-hover-color-rgb: 30, 79, 184;
 }
 
-/* Buttons */
 .btn {
   --bs-btn-font-family: var(--font-sans);
   --bs-btn-font-weight: var(--font-weight-medium);
@@ -54,7 +48,6 @@
   --bs-btn-active-color: var(--color-primary-contrast);
 }
 
-/* Forms */
 .form-control,
 .form-select {
   --bs-border-color: var(--color-border-subtle);
@@ -94,7 +87,6 @@
   --bs-offcanvas-box-shadow: var(--shadow-md);
 }
 
-/* Alerts */
 .alert-danger {
   --bs-alert-color: var(--color-danger);
   --bs-alert-bg: var(--color-danger-bg);

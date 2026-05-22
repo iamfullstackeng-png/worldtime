@@ -2,12 +2,8 @@ import { request } from './client.js';
 import { ENDPOINTS } from './endpoints.js';
 import { ApiError } from './errors.js';
 
-// REST Countries v2 has been intermittently unstable for over a year. The brief
-// names v2 as the source of truth, so we try v2 first to honor that contract,
-// then fall back to v3.1 if v2 fails for any API reason (HTTP error, malformed
-// payload, etc.). v2 and v3.1 have different response shapes, so this module is
-// also the single place where both shapes get normalized to the same
-// `{ name, region, flag }` object the rest of the app sees.
+// Try v2 first; fall back to v3.1 on any ApiError. Both shapes are normalized
+// to `{ name, region, flag }` here, so callers never see the wire format.
 
 function normalizeV2(raw) {
   if (!Array.isArray(raw)) {

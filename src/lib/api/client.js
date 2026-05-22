@@ -53,9 +53,8 @@ export async function request(url, options = {}) {
   const timeoutController = new AbortController();
   const timer = setTimeout(() => timeoutController.abort(), timeoutMs);
 
-  // Combine the internal timeout signal with any externally-provided signal.
-  // AbortSignal.any() is available in Node 18.17+ and modern browsers; if it's
-  // missing we fall back to an event-listener bridge.
+  // Combine timeout and external signals via AbortSignal.any(), with an
+  // event-listener bridge for runtimes that don't ship it.
   let combinedSignal;
   let externalListener;
   if (typeof AbortSignal !== 'undefined' && typeof AbortSignal.any === 'function') {

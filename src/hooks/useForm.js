@@ -16,15 +16,12 @@ import { useCallback, useEffect, useMemo, useReducer, useRef } from 'react';
  * @property {boolean} isSubmitting
  * @property {boolean} isValid - True when validate() returns no truthy errors, ignoring touched.
  * @property {(field: string) => (eventOrValue: Event | any) => void} handleChange -
- *   Accepts a DOM-shaped event (reads .target.value, or .target.checked for checkboxes)
- *   OR a bare value, so custom inputs (selects, date pickers) that don't fire
- *   DOM-shaped events can call handleChange('foo')(value) directly.
+ *   Accepts a DOM event (uses `.target.value` or `.target.checked`) or a bare value.
  * @property {(field: string) => () => void} handleBlur
  * @property {(onValid: (values: Object) => any) => (event: Event) => Promise<void>} handleSubmit
  * @property {(field: string, value: any) => void} setFieldValue
  * @property {(field: string, error: string | null | undefined) => void} setFieldError -
- *   Any falsy value (null, undefined, '') clears the forced error for the field. '' means
- *   "no error", not "empty error message".
+ *   Falsy values (`null`, `undefined`, `''`) clear the forced error.
  * @property {() => void} reset
  *
  * @param {UseFormOptions} options
@@ -92,12 +89,10 @@ export function useForm({ initialValues, validate }) {
   const [state, dispatch] = useReducer(reducer, { initialValues }, init);
   const initialValuesRef = useRef(initialValues);
 
-  // `validate` is mirrored into a ref so `handleSubmit` reads the latest one
-  // without forcing the callback to re-create on every parent render. The ref
-  // sync lives in an effect (not during render) because React 19's
-  // `react-hooks/refs` rule forbids reading `ref.current` during render —
-  // the liveErrors useMemo below intentionally depends on `validate` directly
-  // for that reason.
+  // `validate` is mirrored into a ref so `handleSubmit` can read the latest
+  // one without re-creating the callback. React 19's `react-hooks/refs` rule
+  // blocks reading `.current` during render, so `liveErrors` below depends on
+  // `validate` directly.
   const validateRef = useRef(validate);
   useEffect(() => {
     validateRef.current = validate;
